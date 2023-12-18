@@ -13,12 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={publicSans.className}>
-        <StyledComponentsRegistry>
+      <StyledComponentsRegistry>
+        <body className={publicSans.className}>
           {children}
           <GlobalStyles />
-        </StyledComponentsRegistry>
-      </body>
+        </body>
+      </StyledComponentsRegistry>
     </html>
   );
 }

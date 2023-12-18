@@ -1,7 +1,13 @@
+import Navigation from '@/components/Navigation';
+
 export default function Home() {
   return (
-    <main>
-      <h1>Hello easybank</h1>
-    </main>
+    <>
+      <head>
+        <link rel="icon" href="/images/icon.png" />
+      </head>
+      <Navigation></Navigation>
+      <main></main>
+    </>
   );
 }
