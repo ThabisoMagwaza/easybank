@@ -13,6 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/icon.png" />
+      </head>
       <StyledComponentsRegistry>
         <body className={publicSans.className}>
           {children}
