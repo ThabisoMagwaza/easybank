@@ -29,12 +29,18 @@ const GlobalStyles = createGlobalStyle`
 
   /* Local globals */
 
-  body {
-    font-family: 'Public Sans', sans-serif;
+  html {
+    --color-primary-49: hsl(158, 61%, 49%);
+    --color-gradient-primary: linear-gradient(150deg, hsl(134, 64%, 51%), hsl(192, 69%, 52%));
+
+    --color-secondary-24: hsl(231, 26%, 21%);
+    --color-secondary-61: hsl(231, 8%, 61%);
+
+    --color-white: hsl(0, 0%, 100%);
   }
 
-  h1 {
-    color: red;
+  body {
+    font-family: 'Public Sans', sans-serif;
   }
 `;
 
