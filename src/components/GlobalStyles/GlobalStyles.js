@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
 
     --color-secondary-24: hsl(231, 26%, 21%);
     --color-secondary-61: hsl(231, 8%, 61%);
+    --color-secondary-96: hsl(223, 8%, 96%);
 
     --color-white: hsl(0, 0%, 100%);
   }

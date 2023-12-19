@@ -8,6 +8,7 @@ function Heading1({ children }) {
 const Heading = styled.h1`
   font-size: ${40 / 16}rem;
   font-weight: 300;
+  line-height: 1.1;
 `;
 
 export default Heading1;
