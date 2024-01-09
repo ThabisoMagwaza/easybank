@@ -5,4 +5,5 @@ export const COLORS = {
   Secondary61: 'var(--color-secondary-61)',
   Secondary96: 'var(--color-secondary-96)',
   White: 'var(--color-white)',
+  Gray98: 'var(--color-gray-98)',
 };

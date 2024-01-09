@@ -38,10 +38,12 @@ const GlobalStyles = createGlobalStyle`
     --color-secondary-96: hsl(223, 8%, 96%);
 
     --color-white: hsl(0, 0%, 100%);
+    --color-gray-98: hsl(0, 0%, 98%);
   }
 
   body {
     font-family: 'Public Sans', sans-serif;
+    background-color: var(--color-gray-98);
   }
 `;
 
