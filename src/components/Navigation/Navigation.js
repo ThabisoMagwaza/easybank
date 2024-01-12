@@ -2,19 +2,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
+
+import { COLORS } from '@/lib/constants';
+
 import VisuallyHidden from '../VisuallyHidden';
 import MaxWidthWrapper from '../MaxWidthWrapper';
+import Logo from '../Logo';
 
 function Navigation() {
   return (
     <Wrapper>
       <LogoWrapper href="/">
-        <Image
-          src="/images/logo.svg"
-          width={139}
-          height={20}
-          alt="Easybank - Navigate home"
-        />
+        <Logo />
       </LogoWrapper>
 
       <Menu>
@@ -31,7 +30,10 @@ const Wrapper = styled(MaxWidthWrapper)`
   padding-block: 24px;
 `;
 
-const LogoWrapper = styled(Link)``;
+const LogoWrapper = styled(Link)`
+  color: ${COLORS.Secondary24};
+  text-decoration: none;
+`;
 
 const Menu = styled.button`
   border: none;

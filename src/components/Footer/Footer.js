@@ -1,0 +1,153 @@
+'use client';
+import Link from 'next/link';
+import styled from 'styled-components';
+
+import { COLORS } from '@/lib/constants';
+
+import Logo from '../Logo';
+import Facebook from '../Facebook';
+import YouTube from '../YouTube';
+import Twitter from '../Twitter';
+import Pinterest from '../Pinterest';
+import Instagram from '../Instagram';
+import MaxWidthWrapper from '../MaxWidthWrapper';
+import Button from '../Button';
+
+function Footer() {
+  return (
+    <Wrapper>
+      <InnerWrapper>
+        <LeftColumn>
+          <LogoWrapper href="/">
+            <Logo />
+          </LogoWrapper>
+
+          <SocialIcons>
+            <li>
+              <SocialIcon href="/">
+                <Facebook />
+              </SocialIcon>
+            </li>
+            <li>
+              <SocialIcon href="/">
+                <YouTube />
+              </SocialIcon>
+            </li>
+            <li>
+              <SocialIcon href="/">
+                <Twitter />
+              </SocialIcon>
+            </li>
+            <li>
+              <SocialIcon href="/">
+                <Pinterest />
+              </SocialIcon>
+            </li>
+            <li>
+              <SocialIcon href="/">
+                <Instagram />
+              </SocialIcon>
+            </li>
+          </SocialIcons>
+        </LeftColumn>
+        <nav>
+          <NavList>
+            <li>
+              <NavLink href="/">About Us</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Contact</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Blog</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Careers</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Support</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Privacy Policy</NavLink>
+            </li>
+          </NavList>
+        </nav>
+        <RightColumn>
+          <Button>Request Invite</Button>
+
+          <Copyright> &copy; Easybank. All Rights Reserved</Copyright>
+        </RightColumn>
+      </InnerWrapper>
+    </Wrapper>
+  );
+}
+
+const RightColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 24px;
+`;
+
+const Copyright = styled.p`
+  font-size: ${15 / 16}rem;
+  color: ${COLORS.White};
+  opacity: 50%;
+`;
+
+const InnerWrapper = styled(MaxWidthWrapper)`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+`;
+
+const NavList = styled.ul`
+  list-style: none;
+  font-size: ${15 / 16}rem;
+  text-align: center;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none;
+  color: ${COLORS.White};
+`;
+
+const Wrapper = styled.footer`
+  padding: 40px 24px;
+  background: ${COLORS.Secondary24};
+`;
+
+const LogoWrapper = styled(Link)`
+  color: ${COLORS.White};
+  text-decoration: none;
+`;
+
+const LeftColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+`;
+
+const SocialIcons = styled.ul`
+  display: flex;
+  list-style: none;
+  padding: 0;
+  align-items: center;
+  gap: 16px;
+`;
+
+const SocialIcon = styled(Link)`
+  width: 24px;
+  display: inline-block;
+  color: ${COLORS.White};
+  text-decoration: none;
+`;
+
+export default Footer;
