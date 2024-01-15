@@ -8,6 +8,7 @@ import { COLORS } from '@/lib/constants';
 import VisuallyHidden from '../VisuallyHidden';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import Logo from '../Logo';
+import MobileNavigation from '../MobileNavigation';
 
 function Navigation() {
   return (
@@ -16,10 +17,17 @@ function Navigation() {
         <Logo />
       </LogoWrapper>
 
-      <Menu>
-        <Image src="/images/icon-hamburger.svg" width={24} height={11} alt="" />
-        <VisuallyHidden>Open Menu</VisuallyHidden>
-      </Menu>
+      <MobileNavigation>
+        <Menu>
+          <Image
+            src="/images/icon-hamburger.svg"
+            width={24}
+            height={11}
+            alt=""
+          />
+          <VisuallyHidden>Open Menu</VisuallyHidden>
+        </Menu>
+      </MobileNavigation>
     </Wrapper>
   );
 }
@@ -27,7 +35,8 @@ function Navigation() {
 const Wrapper = styled(MaxWidthWrapper)`
   display: flex;
   justify-content: space-between;
-  padding-block: 24px;
+  height: 64px;
+  align-items: center;
 `;
 
 const LogoWrapper = styled(Link)`
@@ -42,6 +51,10 @@ const Menu = styled.button`
   /* increase tappable area */
   padding: 16px;
   margin: -16px;
+
+  &[data-state='open'] {
+    display: none;
+  }
 `;
 
 export default Navigation;
