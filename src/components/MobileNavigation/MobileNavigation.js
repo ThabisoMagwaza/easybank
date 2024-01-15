@@ -62,7 +62,9 @@ const CloseWrapper = styled.div`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  padding: 0 24px;
+
+  position: absolute;
+  right: 24px;
 `;
 
 const Navigation = styled.nav`
