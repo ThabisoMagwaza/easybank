@@ -55,6 +55,8 @@ function MobileNavigation({ children }) {
 const CloseButton = styled.button`
   border: none;
   background: transparent;
+  padding: 0;
+  margin: 0;
 `;
 
 const CloseWrapper = styled.div`
