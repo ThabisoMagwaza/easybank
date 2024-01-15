@@ -55,8 +55,10 @@ function MobileNavigation({ children }) {
 const CloseButton = styled.button`
   border: none;
   background: transparent;
-  padding: 0;
-  margin: 0;
+
+  /* increase tappable araa */
+  padding: 16px;
+  margin: -16px;
 `;
 
 const CloseWrapper = styled.div`
