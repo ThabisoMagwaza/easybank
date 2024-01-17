@@ -40,7 +40,7 @@ function Hero() {
 const HeroImageWrapper = styled.div`
   @media ${QUERIES.tabletAndUp} {
     position: absolute;
-    top: 64px;
+    top: 80px;
     right: 0;
   }
 `;
@@ -59,13 +59,14 @@ const Paragraph = styled.p`
 
 const Wrapper = styled.header`
   padding-bottom: 88px;
+  background-image: url('/images/bg-intro-mobile.svg');
+  background-repeat: no-repeat;
 
   @media ${QUERIES.tabletAndUp} {
     padding-top: 170px;
     padding-bottom: 170px;
 
     background-image: url('/images/bg-intro-desktop.svg');
-    background-repeat: no-repeat;
     background-position: 650px -250px;
   }
 `;
@@ -76,12 +77,12 @@ const ContentWrapper = styled.div`
 
   margin-left: auto;
   margin-right: auto;
-  padding: 0 24px;
 
   @media ${QUERIES.tabletAndUp} {
     margin: 0;
     padding: 0;
 
+    padding: 0 24px;
     text-align: left;
     max-width: 447px;
   }
