@@ -7,3 +7,15 @@ export const COLORS = {
   White: 'var(--color-white)',
   Gray98: 'var(--color-gray-98)',
 };
+
+const BREAKPOINTS = {
+  mobile: 650,
+  tablet: 900,
+  laptop: 1300,
+};
+
+export const QUERIES = {
+  mobileAndUp: `(min-width: ${BREAKPOINTS.mobile / 16}rem)`,
+  tabletAndUp: `(min-width: ${BREAKPOINTS.tablet / 16}rem)`,
+  laptopAndUp: `{min-width: ${BREAKPOINTS.laptop / 16}rem}`,
+};

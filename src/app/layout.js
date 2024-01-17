@@ -6,7 +6,7 @@ import GlobalStyles from '@/components/GlobalStyles';
 const publicSans = Public_Sans({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Manage | Landing page',
+  title: 'Easybank | Landing page',
   description: 'Fontend Mentor Challenge',
 };
 

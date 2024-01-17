@@ -2,15 +2,16 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { COLORS } from '@/lib/constants';
+import { COLORS, QUERIES } from '@/lib/constants';
 
 import Heading1 from '../Heading1';
 import Button from '../Button';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 
 function Hero() {
   return (
     <Wrapper>
-      <Header>
+      <HeroImageWrapper>
         <HeroImage
           src="/images/image-mockups.png"
           width={767}
@@ -18,21 +19,31 @@ function Hero() {
           alt=""
           priority={true}
         />
-      </Header>
+      </HeroImageWrapper>
 
-      <ContentWrapper>
-        <Heading1>Next generation digital banking</Heading1>
-        <Paragraph>
-          Take your financial life online. Your Easybank account will be a
-          one-stop-shop for spending, saving, budgeting, investing, and much
-          more.
-        </Paragraph>
+      <MaxWidthWrapper>
+        <ContentWrapper>
+          <Heading1>Next generation digital banking</Heading1>
+          <Paragraph>
+            Take your financial life online. Your Easybank account will be a
+            one-stop-shop for spending, saving, budgeting, investing, and much
+            more.
+          </Paragraph>
 
-        <Button>Request Invite</Button>
-      </ContentWrapper>
+          <Button>Request Invite</Button>
+        </ContentWrapper>
+      </MaxWidthWrapper>
     </Wrapper>
   );
 }
+
+const HeroImageWrapper = styled.div`
+  @media ${QUERIES.tabletAndUp} {
+    position: absolute;
+    top: 64px;
+    right: 0;
+  }
+`;
 
 const Paragraph = styled.p`
   color: ${COLORS.Secondary61};
@@ -40,10 +51,23 @@ const Paragraph = styled.p`
 
   padding-top: 16px;
   padding-bottom: 32px;
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: ${18 / 16}rem;
+  }
 `;
 
-const Wrapper = styled.section`
+const Wrapper = styled.header`
   padding-bottom: 88px;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding-top: 170px;
+    padding-bottom: 170px;
+
+    background-image: url('/images/bg-intro-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: 650px -250px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -53,24 +77,24 @@ const ContentWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;
-`;
 
-const Header = styled.header`
-  background-image: url('/images/bg-intro-mobile.svg');
-  background-repeat: no-repeat;
-  background-position-y: -75px;
-  background-size: 100% 100%;
+  @media ${QUERIES.tabletAndUp} {
+    margin: 0;
+    padding: 0;
 
-  padding: 0 12px;
-
-  display: flex;
-  justify-content: center;
+    text-align: left;
+    max-width: 447px;
+  }
 `;
 
 const HeroImage = styled(Image)`
   height: 100%;
   object-fit: cover;
   object-position: 100% -125px;
+
+  @media ${QUERIES.tabletAndUp} {
+    object-position: 130px -125px;
+  }
 `;
 
 export default Hero;

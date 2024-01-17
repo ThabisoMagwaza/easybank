@@ -12,25 +12,31 @@ import MobileNavigation from '../MobileNavigation';
 
 function Navigation() {
   return (
-    <Wrapper>
-      <LogoWrapper href="/">
-        <Logo />
-      </LogoWrapper>
+    <OuterWrapper>
+      <Wrapper>
+        <LogoWrapper href="/">
+          <Logo />
+        </LogoWrapper>
 
-      <MobileNavigation>
-        <Menu>
-          <Image
-            src="/images/icon-hamburger.svg"
-            width={24}
-            height={11}
-            alt=""
-          />
-          <VisuallyHidden>Open Menu</VisuallyHidden>
-        </Menu>
-      </MobileNavigation>
-    </Wrapper>
+        <MobileNavigation>
+          <Menu>
+            <Image
+              src="/images/icon-hamburger.svg"
+              width={24}
+              height={11}
+              alt=""
+            />
+            <VisuallyHidden>Open Menu</VisuallyHidden>
+          </Menu>
+        </MobileNavigation>
+      </Wrapper>
+    </OuterWrapper>
   );
 }
+
+const OuterWrapper = styled.div`
+  background: ${COLORS.White};
+`;
 
 const Wrapper = styled(MaxWidthWrapper)`
   display: flex;
