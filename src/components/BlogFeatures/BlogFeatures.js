@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import Heading2 from '../Heading2';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import Article from '../Article';
+import { QUERIES } from '@/lib/constants';
 
 function BlogFeatures() {
   return (
     <Wrapper>
-      <MaxWidthWrapper>
+      <ContentWrapper>
         <Heading2>Latest Articles</Heading2>
 
         <BlogsList>
@@ -50,10 +51,16 @@ function BlogFeatures() {
             the site ...
           </Article>
         </BlogsList>
-      </MaxWidthWrapper>
+      </ContentWrapper>
     </Wrapper>
   );
 }
+
+const ContentWrapper = styled(MaxWidthWrapper)`
+  @media ${QUERIES.mobileAndUp} {
+    text-align: left;
+  }
+`;
 
 const Wrapper = styled.div`
   padding: 88px 0;
@@ -65,6 +72,11 @@ const BlogsList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media ${QUERIES.mobileAndUp} {
+    flex-direction: row;
+    gap: 30px;
+  }
 `;
 
 export default BlogFeatures;

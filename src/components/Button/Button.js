@@ -18,6 +18,17 @@ const Wrapper = styled.button`
   font-size: ${14 / 16}rem;
   font-weight: 700;
   color: ${COLORS.White};
+
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(
+        to right,
+        hsl(0deg, 100%, 100%, 0.3),
+        hsl(0deg, 100%, 100%, 0.3)
+      ),
+      ${COLORS.GradientPrimary};
+  }
 `;
 
 export default Button;

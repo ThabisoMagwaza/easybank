@@ -1,7 +1,7 @@
 'use client';
 import styled from 'styled-components';
 
-import { COLORS } from '@/lib/constants';
+import { COLORS, QUERIES } from '@/lib/constants';
 
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading2 from '../Heading2';
@@ -62,12 +62,20 @@ const ContentWrapper = styled(MaxWidthWrapper)`
   display: flex;
   flex-direction: column;
   gap: 56px;
+
+  @media ${QUERIES.mobileAndUp} {
+    gap: 72px;
+  }
 `;
 
 const FeaturesList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @media ${QUERIES.mobileAndUp} {
+    flex-direction: row;
+  }
 `;
 
 const Header = styled.header`
@@ -76,6 +84,11 @@ const Header = styled.header`
   gap: 14px;
 
   text-align: center;
+
+  @media ${QUERIES.mobileAndUp} {
+    text-align: left;
+    max-width: 635px;
+  }
 `;
 
 const SubHeading = styled.p`

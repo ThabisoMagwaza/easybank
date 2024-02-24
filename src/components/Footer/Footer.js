@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { COLORS } from '@/lib/constants';
+import { COLORS, QUERIES } from '@/lib/constants';
 
 import Logo from '../Logo';
 import Facebook from '../Facebook';
@@ -52,24 +52,28 @@ function Footer() {
         </LeftColumn>
         <nav>
           <NavList>
-            <li>
-              <NavLink href="/">About Us</NavLink>
-            </li>
-            <li>
-              <NavLink href="/">Contact</NavLink>
-            </li>
-            <li>
-              <NavLink href="/">Blog</NavLink>
-            </li>
-            <li>
-              <NavLink href="/">Careers</NavLink>
-            </li>
-            <li>
-              <NavLink href="/">Support</NavLink>
-            </li>
-            <li>
-              <NavLink href="/">Privacy Policy</NavLink>
-            </li>
+            <NavListColumn>
+              <li>
+                <NavLink href="/">About Us</NavLink>
+              </li>
+              <li>
+                <NavLink href="/">Contact</NavLink>
+              </li>
+              <li>
+                <NavLink href="/">Blog</NavLink>
+              </li>
+            </NavListColumn>
+            <NavListColumn>
+              <li>
+                <NavLink href="/">Careers</NavLink>
+              </li>
+              <li>
+                <NavLink href="/">Support</NavLink>
+              </li>
+              <li>
+                <NavLink href="/">Privacy Policy</NavLink>
+              </li>
+            </NavListColumn>
           </NavList>
         </nav>
         <RightColumn>
@@ -82,12 +86,25 @@ function Footer() {
   );
 }
 
+const NavListColumn = styled.div`
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+`;
+
 const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
   gap: 24px;
+
+  @media ${QUERIES.mobileAndUp} {
+    margin-left: auto;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: end;
+  }
 `;
 
 const Copyright = styled.p`
@@ -100,6 +117,11 @@ const InnerWrapper = styled(MaxWidthWrapper)`
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @media ${QUERIES.mobileAndUp} {
+    flex-direction: row;
+    gap: 0;
+  }
 `;
 
 const NavList = styled.ul`
@@ -110,12 +132,27 @@ const NavList = styled.ul`
 
   display: flex;
   flex-direction: column;
-  gap: 8px;
+
+  @media ${QUERIES.mobileAndUp} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: start;
+    gap: 8px;
+  }
 `;
 
 const NavLink = styled(Link)`
   text-decoration: none;
   color: ${COLORS.White};
+
+  &:hover {
+    color: ${COLORS.Primary};
+  }
+
+  @media ${QUERIES.mobileAndUp} {
+    width: 160px;
+    display: block;
+  }
 `;
 
 const Wrapper = styled.footer`
@@ -133,6 +170,12 @@ const LeftColumn = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 32px;
+
+  @media ${QUERIES.mobileAndUp} {
+    width: 285px;
+    align-items: flex-start;
+    gap: 52px;
+  }
 `;
 
 const SocialIcons = styled.ul`
@@ -148,6 +191,10 @@ const SocialIcon = styled(Link)`
   display: inline-block;
   color: ${COLORS.White};
   text-decoration: none;
+
+  &:hover {
+    color: ${COLORS.Primary};
+  }
 `;
 
 export default Footer;

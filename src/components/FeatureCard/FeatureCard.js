@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { COLORS } from '@/lib/constants';
+import { COLORS, QUERIES } from '@/lib/constants';
 
 function FeatureCard({ imgSrc, imgAlt, title, children }) {
   return (
@@ -26,6 +26,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${QUERIES.mobileAndUp} {
+    align-items: flex-start;
+    text-align: start;
+  }
 `;
 
 const Title = styled.h3`
