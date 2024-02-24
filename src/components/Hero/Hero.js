@@ -79,7 +79,6 @@ const ContentWrapper = styled.div`
 
   margin-left: auto;
   margin-right: auto;
-  padding: 0 24px;
 
   @media ${QUERIES.tabletAndUp} {
     margin: 0;
