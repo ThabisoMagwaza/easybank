@@ -61,13 +61,15 @@ const Wrapper = styled.header`
   padding-bottom: 88px;
   background-image: url('/images/bg-intro-mobile.svg');
   background-repeat: no-repeat;
+  background-size: contain;
 
   @media ${QUERIES.tabletAndUp} {
     padding-top: 170px;
     padding-bottom: 170px;
 
     background-image: url('/images/bg-intro-desktop.svg');
-    background-position: 650px -250px;
+    background-position: 45vw -250px;
+    background-size: revert;
   }
 `;
 
@@ -77,12 +79,12 @@ const ContentWrapper = styled.div`
 
   margin-left: auto;
   margin-right: auto;
+  padding: 0 24px;
 
   @media ${QUERIES.tabletAndUp} {
     margin: 0;
     padding: 0;
 
-    padding: 0 24px;
     text-align: left;
     max-width: 447px;
   }
